@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerSkills { Dash, Weapon };
+
 public class PlayerHealth : MonoBehaviour
 {
-    enum PlayerSkills {  Dash, Weapon };
+    public GameObject personaPrefab;
 
     List<PlayerSkills> activeSkills = new List<PlayerSkills>();
 
@@ -57,6 +59,8 @@ public class PlayerHealth : MonoBehaviour
             default:
                 break;
         }
+
+        InstantiatePersona(skill);
     }
 
     IEnumerator InvincibilityTimer()
@@ -66,4 +70,27 @@ public class PlayerHealth : MonoBehaviour
         invincible = false;
     }
 
+    void InstantiatePersona(PlayerSkills skill)
+    {
+        GameObject persona = Instantiate(personaPrefab, transform.position, Quaternion.identity);
+        persona.GetComponent<Persona>().Skill = skill;
+    }
+
+    public void RegainSkill(PlayerSkills skill)
+    {
+        if (activeSkills.Contains(skill)) return;
+        activeSkills.Add(skill);
+
+        switch (skill)
+        {
+            case PlayerSkills.Dash:
+                dash.enabled = true;
+                break;
+            case PlayerSkills.Weapon:
+                weapon.gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
 }
