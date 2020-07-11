@@ -17,7 +17,20 @@ public class Dash : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing)
         {
-            playerMovement.isDashing = true;
+            StartCoroutine(StartDash());
         }
+    }
+
+    IEnumerator StartDash()
+    {
+        playerMovement.isDashing = true;
+        rb.AddForce(Vector2.zero, ForceMode2D.Impulse);
+
+        // TODO activate collision, animation
+
+        yield return new WaitForSeconds(2.0f);
+
+        playerMovement.isDashing = false;
+
     }
 }
