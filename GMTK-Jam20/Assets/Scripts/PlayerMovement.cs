@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
     }
 
     void Start()
@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxis("Vertical");
 
-//            animator.SetFloat("HorizontalMove", moveInput.x);
-//            animator.SetFloat("VerticalMove", moveInput.y);
-//            animator.SetFloat("Speed", moveInput.sqrMagnitude);
+            animator.SetFloat("HorizontalMove", moveInput.x);
+            animator.SetFloat("VerticalMove", moveInput.y);
+            animator.SetFloat("Speed", moveInput.sqrMagnitude);
         }
 
         // Check the mouse position to see if we should flip
