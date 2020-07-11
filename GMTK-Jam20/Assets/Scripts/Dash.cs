@@ -26,11 +26,13 @@ public class Dash : MonoBehaviour
         playerMovement.isDashing = true;
         rb.AddForce(Vector2.zero, ForceMode2D.Impulse);
 
-        // TODO activate collision, animation
+        // Dash damage could be checking a collider while the "is dashing"
+        // TODO also add animation
 
         yield return new WaitForSeconds(2.0f);
 
-        playerMovement.isDashing = false;
+        // Stop animation
 
+        playerMovement.isDashing = false;
     }
 }
