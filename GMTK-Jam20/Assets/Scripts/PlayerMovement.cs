@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,14 +9,22 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isDashing = false;
 
+    bool isLookingRight = true;
+
     Vector2 moveInput;
     Rigidbody2D rb;
     Animator animator;
+    Camera mainCamera;
 
-    private void Awake()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        mainCamera = Camera.main;
     }
 
     void Update()
@@ -25,15 +34,28 @@ public class PlayerMovement : MonoBehaviour
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxis("Vertical");
 
-            animator.SetFloat("HorizontalMove", moveInput.x);
-            animator.SetFloat("VerticalMove", moveInput.y);
-            animator.SetFloat("Speed", moveInput.sqrMagnitude);
+//            animator.SetFloat("HorizontalMove", moveInput.x);
+//            animator.SetFloat("VerticalMove", moveInput.y);
+//            animator.SetFloat("Speed", moveInput.sqrMagnitude);
+        }
+
+        // Check the mouse position to see if we should flip
+        Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if ((isLookingRight && mousePos.x < transform.position.x) ||
+            (!isLookingRight && mousePos.x > transform.position.x))
+        {
+            // Flip
+            transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
+            isLookingRight = !isLookingRight;
         }
     }
 
     void FixedUpdate()
     {
-        Vector2 targetPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(targetPos);
+        if (!isDashing)
+        {
+            Vector2 targetPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(targetPos);
+        }
     }
 }
