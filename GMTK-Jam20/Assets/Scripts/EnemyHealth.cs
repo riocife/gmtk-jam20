@@ -8,11 +8,14 @@ public class EnemyHealth : MonoBehaviour
 {
     public Action onEnemyDied;
 
-    public AudioClip deathClip;
     AudioSource audioSource;
 
     // Hits needed to die
     public int hits = 1;
+
+    public AudioClip deathClip;
+
+    public GameObject deathVFXPrefab;
 
     void Awake()
     {
@@ -42,6 +45,9 @@ public class EnemyHealth : MonoBehaviour
         audioSource.loop = false;
         audioSource.volume = 0.5f;
         audioSource.Play();
+
+        // Spawn vfx
+        Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
 
         DisableAI();
     }
