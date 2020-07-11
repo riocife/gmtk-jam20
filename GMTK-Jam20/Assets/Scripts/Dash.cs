@@ -87,7 +87,7 @@ public class Dash : MonoBehaviour
         }
     }
 
-    void StopDash()
+    public void StopDash()
     {
         playerMovement.isDashing = false;
 //        mainCamera.GetComponent<Animator>().SetBool("dashing", false);

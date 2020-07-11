@@ -60,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
         switch (skill)
         {
             case PlayerSkills.Dash:
+                dash.StopDash();
                 dash.enabled = false;
                 break;
             case PlayerSkills.Weapon:
