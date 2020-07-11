@@ -128,6 +128,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3151990168229516689, guid: ae5301fe17916f9429961af049e3468b,
+        type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5a0f1f2d74a07b43bc13f20dde0f581, type: 3}
+    - target: {fileID: 5621936240425250800, guid: ae5301fe17916f9429961af049e3468b,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621936240425250800, guid: ae5301fe17916f9429961af049e3468b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5a0f1f2d74a07b43bc13f20dde0f581, type: 3}
     - target: {fileID: 8784036770715936544, guid: ae5301fe17916f9429961af049e3468b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14120,7 +14135,7 @@ PrefabInstance:
     - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[15].second.m_AnimationSpeed
-      value: 10
+      value: 10.000001
       objectReference: {fileID: 0}
     - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
         type: 3}
@@ -18139,7 +18154,7 @@ PrefabInstance:
     - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
-      value: 10.000001
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
         type: 3}
@@ -18159,6 +18174,11 @@ PrefabInstance:
     - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
         type: 3}
       propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955337714047867015, guid: d27d600c79569ef4ab7413d930a0cd91,
+        type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18239,6 +18259,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877648631, guid: fdbfebd08467430418e8eff98d29ed3c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877648631, guid: fdbfebd08467430418e8eff98d29ed3c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c7a935b1f43c6b418ee7e7b0078b137, type: 3}
     - target: {fileID: 1721737832404150757, guid: fdbfebd08467430418e8eff98d29ed3c,
         type: 3}
       propertyPath: m_Name
