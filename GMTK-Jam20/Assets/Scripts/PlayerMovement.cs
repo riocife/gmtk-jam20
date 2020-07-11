@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isDashing = false;
 
-    bool isLookingRight = true;
+    bool isLookingRight = false;
 
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -45,11 +46,10 @@ public class PlayerMovement : MonoBehaviour
             (!isLookingRight && mousePos.x > transform.position.x))
         {
             // Flip
-            transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1f);
             isLookingRight = !isLookingRight;
         }
     }
-
     void FixedUpdate()
     {
         if (!isDashing)
