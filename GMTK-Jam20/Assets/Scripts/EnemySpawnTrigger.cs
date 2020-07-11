@@ -8,6 +8,11 @@ public class EnemySpawnTrigger : MonoBehaviour
     
     List<EnemySpawner> spawners = new List<EnemySpawner>();
 
+    void Start()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+    }
+
     public void RegisterSpawner(EnemySpawner spawner)
     {
         spawners.Add(spawner);

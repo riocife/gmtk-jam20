@@ -16,7 +16,8 @@ public class EnemyHealth : MonoBehaviour
         if (hits <= 0)
         {
             onEnemyDied.Invoke();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
