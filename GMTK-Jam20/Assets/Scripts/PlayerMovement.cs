@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject playerStartPrefab;
 
-    bool isLookingRight = false;
+    public bool isLookingRight = false;
 
     [HideInInspector] public Transform playerStart;
 
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Speed", moveInput.sqrMagnitude);
         }
 
-        // Check the mouse position to see if we should flip
+       // Check the mouse position to see if we should flip
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if ((isLookingRight && mousePos.x < transform.position.x) ||
             (!isLookingRight && mousePos.x > transform.position.x))
