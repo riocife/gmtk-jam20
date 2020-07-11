@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     
     void Start()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+
         if (!spawnTrigger)
         {
             SpawnEnemy();
