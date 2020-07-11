@@ -13,10 +13,19 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
 
     GameObject enemy;
-    
+    AudioSource audioSource;
+
+    AudioListener audioListener;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        audioListener = Camera.main.GetComponent<AudioListener>();
 
         if (!spawnTrigger)
         {
@@ -32,6 +41,8 @@ public class EnemySpawner : MonoBehaviour
     {
         enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyHealth>().onEnemyDied += OnEnemyDied;
+
+        audioSource.Play();
     }
 
     void OnEnemyDied()

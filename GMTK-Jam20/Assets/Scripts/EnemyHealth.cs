@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,29 +28,41 @@ public class EnemyHealth : MonoBehaviour
         hits -= damage;
         if (hits <= 0)
         {
-            StartCoroutine(Die());
+            Die();
         }
     }
 
-    IEnumerator Die()
+    void Die()
     {
         onEnemyDied?.Invoke();
 
+        // Stop current clip and change it to explosion
+        audioSource.Stop();
+        audioSource.clip = deathClip;
+        audioSource.loop = false;
+        audioSource.volume = 0.5f;
         audioSource.Play();
 
-        // Stop current clip and change it to explosion
-        //audioSource.Stop();
-        //audioSource.clip = deathClip;
-        //audioSource.loop = false;
-        //audioSource.volume = 1f;
-        //        audioSource.Play();
+        DisableAI();
+    }
 
-//        yield return new WaitForSeconds(audioSource.clip.length + 0.1f);
+    void DisableAI()
+    {
+        Collider2D[] colls = GetComponents<Collider2D>();
+        foreach (Collider2D coll in colls)
+        {
+            coll.enabled = false;
+        }
 
-        gameObject.SetActive(false);
+        GetComponent<EnemyAttack>().enabled = false;
+        GetComponent<Seeker>().enabled = false;
+        GetComponent<AIPath>().enabled = false;
+
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
 
         Destroy(gameObject, 0.5f);
-
-        yield return null;
     }
 }
