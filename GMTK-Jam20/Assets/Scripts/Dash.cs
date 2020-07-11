@@ -7,19 +7,19 @@ public class Dash : MonoBehaviour
 {
     public float dashSpeed = 8f;
     public float dashDistance = 5f;
+
     public float dashCooldown = 3f;
 
     public LayerMask dashLayerMask;
 
     public CameraShakeParams dashShakeParams = new CameraShakeParams(30f, 20f, 1f, 2f);
 
-//    public float dashShakeDuration = 0.15f;
-//    public float dashShakeMagnitude = 0.4f;
+    public RandomSound dashSound;
 
     PlayerMovement playerMovement;
     Rigidbody2D rb;
+    AudioSource audioSource;
     Camera mainCamera;
-//    CameraShake cameraShake;
 
     Vector2 dashDir;
     Vector2 dashTarget;
@@ -30,12 +30,12 @@ public class Dash : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
         mainCamera = Camera.main;
-//        cameraShake = mainCamera.GetComponent<CameraShake>();
     }
 
     void Update()
@@ -55,8 +55,6 @@ public class Dash : MonoBehaviour
     {
         playerMovement.isDashing = true;
         CameraShaker.Instance.ShakeOnce(40f, 20f, 0.2f, 0.5f);
-//        StartCoroutine(cameraShake.Shake(dashShakeDuration, dashShakeMagnitude));
-//        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         dashDir = ((Vector2)mousePos - rb.position).normalized;
@@ -70,6 +68,10 @@ public class Dash : MonoBehaviour
         {
             dashTarget = rb.position + dashDir * dashDistance;
         }
+
+        audioSource.volume = dashSound.Volume;
+        audioSource.pitch = dashSound.Pitch;
+        audioSource.Play();
     }
 
     void PerformDash()

@@ -6,12 +6,14 @@ using UnityEngine;
 public class PlayerDetection : MonoBehaviour
 {
     AIDestinationSetter ai;
-
     bool foundPlayer = false;
+
+    AudioSource audioSource;
 
     private void Awake()
     {
-        ai = transform.GetComponentInParent<AIDestinationSetter>();   
+        ai = transform.GetComponentInParent<AIDestinationSetter>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +23,8 @@ public class PlayerDetection : MonoBehaviour
         {
             foundPlayer = true;
             ai.target = player.transform;
+
+            audioSource.Play();
         }
     }
 }
