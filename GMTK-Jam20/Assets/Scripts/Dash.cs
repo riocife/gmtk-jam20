@@ -6,10 +6,17 @@ public class Dash : MonoBehaviour
 {
     public float dashForce = 10f;
     public float dashTime = 0.5f;
+    public float dashSpeed = 8f;
+    public float dashDistance = 5f;
+
+    public LayerMask dashLayerMask;
 
     PlayerMovement playerMovement;
     Rigidbody2D rb;
     Camera mainCamera;
+
+    Vector2 dashDir;
+    Vector2 dashTarget;
 
     void Awake()
     {
@@ -26,29 +33,50 @@ public class Dash : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing)
         {
-            StartCoroutine(StartDash());
+            StartDash();
         }
     }
 
-    IEnumerator StartDash()
+    void FixedUpdate()
+    {
+        PerformDash();    
+    }
+
+    void StartDash()
     {
         playerMovement.isDashing = true;
-        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
+//        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 dashDir = ((Vector2)(mousePos - transform.position)).normalized;
+        dashDir = ((Vector2)mousePos - rb.position).normalized;
 
-        Debug.Log("DASH!");
-        rb.AddForce(dashDir * dashForce, ForceMode2D.Impulse);
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, dashDir, dashDistance, dashLayerMask);
+        if (hit)
+        {
+            dashTarget = hit.point;
+        }
+        else
+        {
+            dashTarget = rb.position + dashDir * dashDistance;
+        }
+    }
 
-        // Dash damage could be checking a collider while the "is dashing"
-        // TODO also add animation
+    void PerformDash()
+    {
+        if (!playerMovement.isDashing) return;
 
-        yield return new WaitForSeconds(dashTime);
+        Vector2 target = Vector2.MoveTowards(rb.position, dashTarget, dashSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(target);
 
-        // Stop animation
+        if (Vector2.Distance(rb.position, dashTarget) < 1f)
+        {
+            StopDash();
+        }
+    }
 
+    void StopDash()
+    {
         playerMovement.isDashing = false;
-        mainCamera.GetComponent<Animator>().SetBool("dashing", false);
+//        mainCamera.GetComponent<Animator>().SetBool("dashing", false);
     }
 }
