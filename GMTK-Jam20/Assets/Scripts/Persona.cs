@@ -20,6 +20,8 @@ public class Persona : MonoBehaviour
     // Each Skill can be associated with it's own color.
     public List<SkillColor> colors = new List<SkillColor>();
 
+    [HideInInspector] public Transform targetTransform;
+
     [Header("Setup")]
     public Transform playerTriggerDetection;
 
@@ -34,23 +36,12 @@ public class Persona : MonoBehaviour
         }
     }
 
-    Rigidbody2D rb;
     SpriteRenderer sr;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-    }
-
-    void Start()
-    {
         StartCoroutine(InitialState());
-
-        // Adds impulse at random angle (in radians)
-        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
-        Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-        rb.AddForce(dir * initialImpulse, ForceMode2D.Impulse);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
