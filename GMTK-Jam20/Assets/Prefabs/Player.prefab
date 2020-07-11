@@ -274,6 +274,11 @@ MonoBehaviour:
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  dashShakeParams:
+    magnitude: 20
+    roughness: 20
+    fadeInTime: 1
+    fadeOutTime: 3
 --- !u!114 &1506086070
 MonoBehaviour:
   m_ObjectHideFlags: 0

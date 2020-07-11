@@ -3115,6 +3115,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1506086069, guid: ade256eeb93a4d54fbe5d33377e489e5, type: 3}
+      propertyPath: dashShakeParams.magnitude
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506086069, guid: ade256eeb93a4d54fbe5d33377e489e5, type: 3}
+      propertyPath: dashShakeParams.fadeOutTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8164267288076784737, guid: ade256eeb93a4d54fbe5d33377e489e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3244,9 +3252,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552625257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89425f7169b4e364b8afb0b62e4c8e87, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 0}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1615648169
 GameObject:
   m_ObjectHideFlags: 0

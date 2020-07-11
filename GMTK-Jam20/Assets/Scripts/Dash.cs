@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using EZCameraShake;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class Dash : MonoBehaviour
     public float dashCooldown = 3f;
 
     public LayerMask dashLayerMask;
+
+    public CameraShakeParams dashShakeParams = new CameraShakeParams(30f, 20f, 1f, 2f);
 
 //    public float dashShakeDuration = 0.15f;
 //    public float dashShakeMagnitude = 0.4f;
@@ -51,6 +54,7 @@ public class Dash : MonoBehaviour
     void StartDash()
     {
         playerMovement.isDashing = true;
+        CameraShaker.Instance.ShakeOnce(40f, 20f, 0.2f, 0.5f);
 //        StartCoroutine(cameraShake.Shake(dashShakeDuration, dashShakeMagnitude));
 //        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
 
