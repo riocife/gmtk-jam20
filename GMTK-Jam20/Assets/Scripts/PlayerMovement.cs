@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    float originalSpeed;
 
     public bool isDashing = false;
 
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mainCamera = Camera.main;
         playerStart = Instantiate(playerStartPrefab, transform.position, Quaternion.identity).transform;
+        originalSpeed = moveSpeed;
     }
 
     void Update()
@@ -41,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             moveInput.y = Input.GetAxis("Vertical");
 
             animator.SetFloat("HorizontalMove", moveInput.x);
-            animator.SetFloat("VerticalMove", moveInput.y);
+            animator.SetFloat("Vertical", moveInput.y);
             animator.SetFloat("Speed", moveInput.sqrMagnitude);
         }
 
@@ -59,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         {
+            if (moveInput.magnitude > 1)
+            {
+                moveInput = moveInput.normalized;
+            }
             Vector2 targetPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(targetPos);
         }
