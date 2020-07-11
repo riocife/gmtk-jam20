@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    [SerializeField, Range(0f, 1f)] float awayFromPlayer;
+    [SerializeField, Range(0f, 1f)] float awayFromPlayer = 0.25f;
 
     Transform player;
     Camera mainCamera;
