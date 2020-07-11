@@ -33,6 +33,7 @@ public class Dash : MonoBehaviour
     IEnumerator StartDash()
     {
         playerMovement.isDashing = true;
+        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 dashDir = ((Vector2)(mousePos - transform.position)).normalized;
@@ -48,5 +49,6 @@ public class Dash : MonoBehaviour
         // Stop animation
 
         playerMovement.isDashing = false;
+        mainCamera.GetComponent<Animator>().SetBool("dashing", false);
     }
 }
