@@ -1,34 +1,46 @@
 fileFormatVersion: 2
-guid: 0f109e54b8377e445bde5507c99f77c5
+guid: 5fbfa0b31a1a3134592643945737e2f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2302185223285986788
-    second: IMG_Tilemap_BlueLedFloor_0
+      213: 9086474596980485551
+    second: IMG_Tilemap_BlueLedBigFloor_0
   - first:
-      213: 1613906921983734375
-    second: IMG_Tilemap_BlueLedFloor_1
+      213: -5760646191789175336
+    second: IMG_Tilemap_BlueLedBigFloor_1
   - first:
-      213: 1117053377644418152
-    second: IMG_Tilemap_BlueLedFloor_2
+      213: -6124600093145870403
+    second: IMG_Tilemap_BlueLedBigFloor_2
   - first:
-      213: 3284900395750954059
-    second: IMG_Tilemap_BlueLedFloor_3
+      213: -1225354601554379696
+    second: IMG_Tilemap_BlueLedBigFloor_3
   - first:
-      213: -5350543909119468759
-    second: IMG_Tilemap_BlueLedFloor_4
+      213: 3944590322928348795
+    second: IMG_Tilemap_BlueLedBigFloor_4
   - first:
-      213: -7275962112955908764
-    second: IMG_Tilemap_BlueLedFloor_5
+      213: -6607634074376282538
+    second: IMG_Tilemap_BlueLedBigFloor_5
   - first:
-      213: -6519380257040328575
-    second: IMG_Tilemap_BlueLedFloor_6
+      213: -5784987801841165222
+    second: IMG_Tilemap_BlueLedBigFloor_6
   - first:
-      213: -8153123011579443621
-    second: IMG_Tilemap_BlueLedFloor_7
+      213: -1390176854179962297
+    second: IMG_Tilemap_BlueLedBigFloor_7
   - first:
-      213: -5150171088190351131
-    second: IMG_Tilemap_BlueLedFloor_8
+      213: 1990170604470966713
+    second: IMG_Tilemap_BlueLedBigFloor_8
+  - first:
+      213: -7987658983718589303
+    second: IMG_Tilemap_BlueLedBigFloor_9
+  - first:
+      213: -7252171992452367770
+    second: IMG_Tilemap_BlueLedBigFloor_10
+  - first:
+      213: 4062111730921497427
+    second: IMG_Tilemap_BlueLedBigFloor_11
+  - first:
+      213: -7605611031578493301
+    second: IMG_Tilemap_BlueLedBigFloor_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,23 +122,95 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_0
+      name: IMG_Tilemap_BlueLedBigFloor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fade1a5f084a91e70800000000000000
+      internalID: 9086474596980485551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd03bd4fc21e00b0800000000000000
+      internalID: -5760646191789175336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf47b03aac010ba0800000000000000
+      internalID: -6124600093145870403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cf57a6b7aaefee0800000000000000
+      internalID: -1225354601554379696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_4
       rect:
         serializedVersion: 2
         x: 0
@@ -140,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1aa2e6acbefc00e0800000000000000
-      internalID: -2302185223285986788
+      spriteID: b7e6696dffffdb630800000000000000
+      internalID: 3944590322928348795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_1
+      name: IMG_Tilemap_BlueLedBigFloor_5
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76272617bcfb56610800000000000000
-      internalID: 1613906921983734375
+      spriteID: 65ed80f61d7fc44a0800000000000000
+      internalID: -6607634074376282538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_2
+      name: IMG_Tilemap_BlueLedBigFloor_6
       rect:
         serializedVersion: 2
         x: 64
@@ -182,14 +266,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86455a9e022908f00800000000000000
-      internalID: 1117053377644418152
+      spriteID: a5c1a419e3897bfa0800000000000000
+      internalID: -5784987801841165222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_3
+      name: IMG_Tilemap_BlueLedBigFloor_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74222af348915bce0800000000000000
+      internalID: -1390176854179962297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_8
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b44964b718f469d20800000000000000
-      internalID: 3284900395750954059
+      spriteID: 9b99ae1de918e9b10800000000000000
+      internalID: 1990170604470966713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_4
+      name: IMG_Tilemap_BlueLedBigFloor_9
       rect:
         serializedVersion: 2
         x: 32
@@ -224,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92bddcdb9ac0fb5b0800000000000000
-      internalID: -5350543909119468759
+      spriteID: 98cee788972262190800000000000000
+      internalID: -7987658983718589303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_5
+      name: IMG_Tilemap_BlueLedBigFloor_10
       rect:
         serializedVersion: 2
         x: 64
@@ -245,17 +350,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46dff0a0207960b90800000000000000
-      internalID: -7275962112955908764
+      spriteID: 66af6db1ffb1b5b90800000000000000
+      internalID: -7252171992452367770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_6
+      name: IMG_Tilemap_BlueLedBigFloor_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353e587e8158f5830800000000000000
+      internalID: 4062111730921497427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_Tilemap_BlueLedBigFloor_12
+      rect:
+        serializedVersion: 2
+        x: 96
         y: 0
         width: 32
         height: 32
@@ -266,50 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1889a6782328685a0800000000000000
-      internalID: -6519380257040328575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b568ebc61d94ade80800000000000000
-      internalID: -8153123011579443621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_Tilemap_BlueLedFloor_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e85deb9eaae688b0800000000000000
-      internalID: -5150171088190351131
+      spriteID: b8eb8f22011737690800000000000000
+      internalID: -7605611031578493301
       vertices: []
       indices: 
       edges: []
