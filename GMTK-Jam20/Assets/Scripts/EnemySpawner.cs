@@ -13,14 +13,23 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
 
     GameObject enemy;
-    
+    AudioSource audioSource;
+
+    AudioListener audioListener;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        audioListener = Camera.main.GetComponent<AudioListener>();
 
         if (!spawnTrigger)
         {
-            SpawnEnemy();
+            SpawnEnemy(true);
         }
         else
         {
@@ -28,10 +37,15 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(bool firstSpawn = false)
     {
         enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyHealth>().onEnemyDied += OnEnemyDied;
+
+        if (!firstSpawn)
+        {
+            audioSource.Play();
+        }
     }
 
     void OnEnemyDied()

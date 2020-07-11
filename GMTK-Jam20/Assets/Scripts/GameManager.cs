@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+//        Cursor.lockState = CursorLockMode.Confined;
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     }
 }

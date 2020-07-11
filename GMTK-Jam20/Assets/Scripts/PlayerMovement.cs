@@ -7,12 +7,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    float originalSpeed;
 
     public bool isDashing = false;
 
     public GameObject playerStartPrefab;
 
-    bool isLookingRight = false;
+    public bool isLookingRight = false;
 
     [HideInInspector] public Transform playerStart;
 
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mainCamera = Camera.main;
         playerStart = Instantiate(playerStartPrefab, transform.position, Quaternion.identity).transform;
+        originalSpeed = moveSpeed;
     }
 
     void Update()
@@ -41,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
             moveInput.y = Input.GetAxis("Vertical");
 
             animator.SetFloat("HorizontalMove", moveInput.x);
-            animator.SetFloat("VerticalMove", moveInput.y);
+            animator.SetFloat("Vertical", moveInput.y);
             animator.SetFloat("Speed", moveInput.sqrMagnitude);
         }
 
-        // Check the mouse position to see if we should flip
+       // Check the mouse position to see if we should flip
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if ((isLookingRight && mousePos.x < transform.position.x) ||
             (!isLookingRight && mousePos.x > transform.position.x))
@@ -59,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         {
+            if (moveInput.magnitude > 1)
+            {
+                moveInput = moveInput.normalized;
+            }
             Vector2 targetPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(targetPos);
         }
