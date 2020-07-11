@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 809243764}
   - component: {fileID: 809243765}
   - component: {fileID: 809243766}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Persona
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,8 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8953891, y: -1.8881837, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children:
-  - {fileID: 962769538083570096}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,11 +96,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0068965955, y: -0.05863335}
-  m_Size: {x: 0.16758525, y: 0.20273332}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24513045, y: 0.36385974}
   m_Direction: 0
 --- !u!114 &962769537980549971
 MonoBehaviour:
@@ -123,7 +122,6 @@ MonoBehaviour:
   - skill: 1
     color: {r: 0.22530258, g: 0.30624232, b: 0.7830189, a: 1}
   targetTransform: {fileID: 0}
-  playerTriggerDetection: {fileID: 962769538083570096}
 --- !u!114 &809243764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,50 +200,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!1 &962769538083569999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 962769538083570096}
-  - component: {fileID: 962769538083570097}
-  m_Layer: 0
-  m_Name: PlayerTriggerDetection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &962769538083570096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962769538083569999}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 962769537980549968}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &962769538083570097
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962769538083569999}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24513045, y: 0.36385974}
-  m_Direction: 0

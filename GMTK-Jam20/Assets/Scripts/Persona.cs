@@ -22,9 +22,6 @@ public class Persona : MonoBehaviour
 
     [HideInInspector] public Transform targetTransform;
 
-    [Header("Setup")]
-    public Transform playerTriggerDetection;
-
     PlayerSkills skill;
     public PlayerSkills Skill
     {
@@ -37,29 +34,34 @@ public class Persona : MonoBehaviour
     }
 
     SpriteRenderer sr;
+    Collider2D col;
 
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        StartCoroutine(InitialState());
+        col = GetComponent<Collider2D>();
+        col.enabled = false;
+    }
+
+    void Start()
+    {
+        StartCoroutine(ActivateCollider());
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth player = collision.transform.GetComponent<PlayerHealth>();
-        if (player != null && playerTriggerDetection.gameObject.activeInHierarchy)
+        if (player != null)
         {
-            Debug.Log("Hello");
+            player.RegainSkill(skill);
             Destroy(gameObject);
         }
     }
 
-    IEnumerator InitialState()
+    IEnumerator ActivateCollider()
     {
-        playerTriggerDetection.gameObject.SetActive(false);
-
         yield return new WaitForSeconds(3.0f);
 
-        playerTriggerDetection.gameObject.SetActive(true);
+        col.enabled = true;
     }
 }
