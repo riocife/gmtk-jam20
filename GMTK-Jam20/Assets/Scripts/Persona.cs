@@ -20,8 +20,7 @@ public class Persona : MonoBehaviour
     // Each Skill can be associated with it's own color.
     public List<SkillColor> colors = new List<SkillColor>();
 
-    [Header("Setup")]
-    public Transform playerTriggerDetection;
+    [HideInInspector] public Transform targetTransform;
 
     PlayerSkills skill;
     public PlayerSkills Skill
@@ -34,41 +33,35 @@ public class Persona : MonoBehaviour
         }
     }
 
-    Rigidbody2D rb;
     SpriteRenderer sr;
+    Collider2D col;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
+        col.enabled = false;
     }
 
     void Start()
     {
-        StartCoroutine(InitialState());
-
-        // Adds impulse at random angle (in radians)
-        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
-        Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-        rb.AddForce(dir * initialImpulse, ForceMode2D.Impulse);
+        StartCoroutine(ActivateCollider());
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth player = collision.transform.GetComponent<PlayerHealth>();
-        if (player != null && playerTriggerDetection.gameObject.activeInHierarchy)
+        if (player != null)
         {
-            Debug.Log("Hello");
+            player.RegainSkill(skill);
             Destroy(gameObject);
         }
     }
 
-    IEnumerator InitialState()
+    IEnumerator ActivateCollider()
     {
-        playerTriggerDetection.gameObject.SetActive(false);
-
         yield return new WaitForSeconds(3.0f);
 
-        playerTriggerDetection.gameObject.SetActive(true);
+        col.enabled = true;
     }
 }

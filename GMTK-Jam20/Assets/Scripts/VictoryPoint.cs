@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VictoryPoint : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class VictoryPoint : MonoBehaviour
     {
         if (collision.transform.GetComponent<PlayerMovement>())
         {
-            Debug.Log("Player wins!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

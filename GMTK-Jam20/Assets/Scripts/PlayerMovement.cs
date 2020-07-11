@@ -10,7 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isDashing = false;
 
+    public GameObject playerStartPrefab;
+
     bool isLookingRight = false;
+
+    [HideInInspector] public Transform playerStart;
 
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -26,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        playerStart = Instantiate(playerStartPrefab, transform.position, Quaternion.identity).transform;
     }
 
     void Update()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,14 @@ public class PlayerHealth : MonoBehaviour
 
         activeSkills.Add(PlayerSkills.Dash);
         activeSkills.Add(PlayerSkills.Weapon);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            OnHit();
+        }
     }
 
     public void OnHit()
@@ -72,8 +81,13 @@ public class PlayerHealth : MonoBehaviour
 
     void InstantiatePersona(PlayerSkills skill)
     {
-        GameObject persona = Instantiate(personaPrefab, transform.position, Quaternion.identity);
-        persona.GetComponent<Persona>().Skill = skill;
+        Persona persona = Instantiate(personaPrefab, transform.position, Quaternion.identity).GetComponent<Persona>();
+        if (persona != null)
+        {
+            persona.Skill = skill;
+            //            persona.targetTransform = GetComponent<PlayerMovement>().initialTransform;
+            persona.GetComponent<AIDestinationSetter>().target = GetComponent<PlayerMovement>().playerStart;
+        }
     }
 
     public void RegainSkill(PlayerSkills skill)
