@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            int randomSkillIndex = Random.Range(0, activeSkills.Count - 1);
+            int randomSkillIndex = Random.Range(0, activeSkills.Count);
             PlayerSkills skill = activeSkills[randomSkillIndex];
             activeSkills.RemoveAt(randomSkillIndex);
 

@@ -6,12 +6,13 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public Transform weapon;
 
-    [SerializeField] float bulletForce = 20f;
+    public float bulletForce = 20f;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && weapon != null)
         {
             Shoot();
         }
@@ -20,6 +21,6 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        bullet.GetComponent<Rigidbody2D>().AddForce(-firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }

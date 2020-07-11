@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7351919236313817897}
   - component: {fileID: 1964490650604619193}
   - component: {fileID: 9050742040563778719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,9 @@ GameObject:
   - component: {fileID: 8164267288076784741}
   - component: {fileID: 8164267288076784750}
   - component: {fileID: 8164267288076784751}
-  m_Layer: 0
+  - component: {fileID: 1506086069}
+  - component: {fileID: 1506086070}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,6 +253,7 @@ MonoBehaviour:
   firePoint: {fileID: 8164267289261939589}
   bulletPrefab: {fileID: 1593776526924966963, guid: b40d0cf83f2f81546b2bc5ea8e3ab5fb,
     type: 3}
+  weapon: {fileID: 7351919236313817897}
   bulletForce: 20
 --- !u!70 &8164267288076784751
 CapsuleCollider2D:
@@ -265,9 +268,36 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.024096012, y: -0.23298109}
-  m_Size: {x: 0.83801365, y: 1.3412263}
+  m_Offset: {x: 0, y: -0.63}
+  m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
+--- !u!114 &1506086069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164267288076784740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbcc2f9547aa6e439f76bcc279a13f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 10
+  dashTime: 0.5
+--- !u!114 &1506086070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164267288076784740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e08ec019dc73e54a9898661dc6a1be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibilityTime: 1
 --- !u!1 &8164267289261939588
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8164267289261939589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,9 +321,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164267289261939588}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.04, y: 0.54, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.231, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7351919236313817897}
   m_RootOrder: 0
