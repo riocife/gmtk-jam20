@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour
 {
-    public float dashForce = 10f;
-    public float dashTime = 0.5f;
     public float dashSpeed = 8f;
     public float dashDistance = 5f;
+    public float dashCooldown = 3f;
 
     public LayerMask dashLayerMask;
+
+//    public float dashShakeDuration = 0.15f;
+//    public float dashShakeMagnitude = 0.4f;
 
     PlayerMovement playerMovement;
     Rigidbody2D rb;
     Camera mainCamera;
+//    CameraShake cameraShake;
 
     Vector2 dashDir;
     Vector2 dashTarget;
+
+    bool cooldown = false;
 
     void Awake()
     {
@@ -26,7 +31,8 @@ public class Dash : MonoBehaviour
 
     void Start()
     {
-        mainCamera = Camera.main;    
+        mainCamera = Camera.main;
+//        cameraShake = mainCamera.GetComponent<CameraShake>();
     }
 
     void Update()
@@ -45,6 +51,7 @@ public class Dash : MonoBehaviour
     void StartDash()
     {
         playerMovement.isDashing = true;
+//        StartCoroutine(cameraShake.Shake(dashShakeDuration, dashShakeMagnitude));
 //        mainCamera.GetComponent<Animator>().SetBool("dashing", true);
 
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -63,7 +70,7 @@ public class Dash : MonoBehaviour
 
     void PerformDash()
     {
-        if (!playerMovement.isDashing) return;
+        if (!playerMovement.isDashing && !cooldown) return;
 
         Vector2 target = Vector2.MoveTowards(rb.position, dashTarget, dashSpeed * Time.fixedDeltaTime);
         rb.MovePosition(target);
@@ -78,5 +85,17 @@ public class Dash : MonoBehaviour
     {
         playerMovement.isDashing = false;
 //        mainCamera.GetComponent<Animator>().SetBool("dashing", false);
+
+        if (dashCooldown >= 0.01f)
+        {
+            cooldown = true;
+            StartCoroutine(RegainDash());
+        }
+    }
+
+    IEnumerator RegainDash()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        cooldown = false;
     }
 }
