@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && weapon != null)
+        if (Input.GetButtonDown("Fire1") && weapon.gameObject.active)
         {
             Shoot();
         }
