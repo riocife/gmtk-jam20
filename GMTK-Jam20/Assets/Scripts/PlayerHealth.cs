@@ -59,8 +59,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (invincible) return;
         
-        animator.SetTrigger("Hitted");
-
         // If there are no active skills, game over.
         if (activeSkills.Count <= 0)
         {
@@ -68,6 +66,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
+            animator.SetTrigger("Hitted");
+
             int randomSkillIndex = UnityEngine.Random.Range(0, activeSkills.Count);
             PlayerSkills skill = activeSkills[randomSkillIndex];
             activeSkills.RemoveAt(randomSkillIndex);
@@ -141,17 +141,19 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<Shooting>().enabled = false;
         GetComponent<Dash>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
 
-        onPlayerDied.Invoke();
+//        onPlayerDied?.Invoke();
 
         animator.SetTrigger("Died");
 
+        Debug.Log("PLAYER DIED");
         StartCoroutine(AfterDeath());
     }
 
     IEnumerator AfterDeath()
     {
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 }
