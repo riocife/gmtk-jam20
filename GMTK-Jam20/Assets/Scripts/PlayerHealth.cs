@@ -1,4 +1,5 @@
 ﻿using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public struct PersonaPrefab
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static Action onPlayerDied;
+
     public List<PersonaPrefab> personaPrefabs = new List<PersonaPrefab>();
 
     List<PlayerSkills> activeSkills = new List<PlayerSkills>();
@@ -51,11 +54,11 @@ public class PlayerHealth : MonoBehaviour
         // If there are no active skills, game over.
         if (activeSkills.Count <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
         else
         {
-            int randomSkillIndex = Random.Range(0, activeSkills.Count);
+            int randomSkillIndex = UnityEngine.Random.Range(0, activeSkills.Count);
             PlayerSkills skill = activeSkills[randomSkillIndex];
             activeSkills.RemoveAt(randomSkillIndex);
 
@@ -117,5 +120,16 @@ public class PlayerHealth : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    void Die()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<Shooting>().enabled = false;
+        GetComponent<Dash>().enabled = false;
+
+        onPlayerDied.Invoke();
+
+        Destroy(gameObject, 5f);
     }
 }
