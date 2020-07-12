@@ -146,7 +146,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 4
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3edd6433ca91f24783256b8a09f207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hits: 2
+  hits: 1
   deathClip: {fileID: 8300000, guid: c5a0f1f2d74a07b43bc13f20dde0f581, type: 3}
   deathVFXPrefab: {fileID: 3434106739243743573, guid: eebefd56b4cb8444f96e76ca16745401,
     type: 3}
