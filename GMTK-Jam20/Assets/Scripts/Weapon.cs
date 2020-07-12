@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            sprite.sortingOrder = 10;
+            sprite.sortingOrder = 11;
         }
 
     }
