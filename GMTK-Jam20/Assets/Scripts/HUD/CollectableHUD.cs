@@ -8,15 +8,11 @@ public class CollectableHUD : MonoBehaviour
 {
     public Text collectedText;
 
-    GameObject Diamond1;
-    GameObject Diamond2;
+    public GameObject Diamond1;
+    public GameObject Diamond2;
 
     void Start()
     {
-        Diamond1 = GameObject.Find("Diamond1");
-        Collectable.onCollected += OnCollected;
-
-        Diamond2 = GameObject.Find("Diamond2");
         Collectable.onCollected += OnCollected;
     }
 

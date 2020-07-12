@@ -266,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedText: {fileID: 0}
+  Diamond1: {fileID: 6255247780179427893}
+  Diamond2: {fileID: 7080404205110329517}
 --- !u!1 &6255247780179427893
 GameObject:
   m_ObjectHideFlags: 0
