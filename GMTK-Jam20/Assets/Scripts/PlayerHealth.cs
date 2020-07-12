@@ -143,7 +143,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Dash>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
 
-//        onPlayerDied?.Invoke();
+//          onPlayerDied?.Invoke();
 
         animator.SetTrigger("Died");
 
