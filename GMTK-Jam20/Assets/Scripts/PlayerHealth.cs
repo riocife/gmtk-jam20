@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerSkills { Dash, Weapon };
 
@@ -145,6 +146,12 @@ public class PlayerHealth : MonoBehaviour
 
         animator.SetTrigger("Died");
 
-        Destroy(gameObject, 5f);
+        StartCoroutine(AfterDeath());
+    }
+
+    IEnumerator AfterDeath()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
