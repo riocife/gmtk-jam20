@@ -706,11 +706,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8164267288076784738, guid: ade256eeb93a4d54fbe5d33377e489e5,
-        type: 3}
-      propertyPath: isDashing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8164267288076784740, guid: ade256eeb93a4d54fbe5d33377e489e5,
         type: 3}
       propertyPath: m_Name
