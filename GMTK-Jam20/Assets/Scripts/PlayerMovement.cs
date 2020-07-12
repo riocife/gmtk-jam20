@@ -32,10 +32,8 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-//        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
-//        sprite = GameObject.Find("PlayerSprite").GetComponent<SpriteRenderer>();
+        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+        sprite = GameObject.Find("PlayerSprite").GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -47,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-//        animator.SetBool("isDashing", isDashing);
+        animator.SetBool("isDashing", isDashing);
         if (!isDashing)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");

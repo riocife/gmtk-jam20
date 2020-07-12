@@ -33,7 +33,6 @@ public class Dash : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -82,8 +81,6 @@ public class Dash : MonoBehaviour
         // Camera shake
         mainCamera.GetComponent<CameraMove>().Shake((Vector3)dashDir, dashShakeMag, dashShakeTime);
 
-        animator.SetBool("isDashing", true);
-//        animator.SetBool("is")
     }
 
     void PerformDash()
@@ -106,8 +103,6 @@ public class Dash : MonoBehaviour
             cooldown = true;
             StartCoroutine(RegainDash());
         }
-
-        animator.SetBool("isDashing", false);
     }
 
     IEnumerator RegainDash()
