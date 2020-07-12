@@ -5,9 +5,17 @@ using UnityEngine;
 
 public enum PlayerSkills { Dash, Weapon };
 
+[System.Serializable]
+public struct PersonaPrefab
+{
+    public string name;
+    public PlayerSkills skill;
+    public GameObject prefab;
+}
+
 public class PlayerHealth : MonoBehaviour
 {
-    public GameObject personaPrefab;
+    public List<PersonaPrefab> personaPrefabs = new List<PersonaPrefab>();
 
     List<PlayerSkills> activeSkills = new List<PlayerSkills>();
 
@@ -22,8 +30,10 @@ public class PlayerHealth : MonoBehaviour
         dash = GetComponent<Dash>();
         weapon = transform.GetChild(0);
 
-        activeSkills.Add(PlayerSkills.Dash);
-        activeSkills.Add(PlayerSkills.Weapon);
+        foreach (PersonaPrefab persona in personaPrefabs)
+        {
+            activeSkills.Add(persona.skill);
+        }
     }
 
     void Update()
@@ -82,11 +92,11 @@ public class PlayerHealth : MonoBehaviour
 
     void InstantiatePersona(PlayerSkills skill)
     {
+        GameObject personaPrefab = personaPrefabs.Find(prefab => prefab.skill == skill).prefab;
         Persona persona = Instantiate(personaPrefab, transform.position, Quaternion.identity).GetComponent<Persona>();
         if (persona != null)
         {
-            persona.Skill = skill;
-            //            persona.targetTransform = GetComponent<PlayerMovement>().initialTransform;
+            persona.skill = skill;
             persona.GetComponent<AIDestinationSetter>().target = GetComponent<PlayerMovement>().playerStart;
         }
     }
