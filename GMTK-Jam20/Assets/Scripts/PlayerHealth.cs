@@ -17,7 +17,10 @@ public struct PersonaPrefab
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static Action<PlayerSkills> onPlayerLoseSkill;
+    public static Action<PlayerSkills> onPlayerGainSkill;
     public static Action onPlayerDied;
+
     Animator animator;
     public List<PersonaPrefab> personaPrefabs = new List<PersonaPrefab>();
 
@@ -91,6 +94,8 @@ public class PlayerHealth : MonoBehaviour
         }
 
         InstantiatePersona(skill);
+
+        onPlayerLoseSkill.Invoke(skill);
     }
 
     IEnumerator InvincibilityTimer()
@@ -127,6 +132,8 @@ public class PlayerHealth : MonoBehaviour
             default:
                 break;
         }
+
+        onPlayerGainSkill.Invoke(skill);
     }
 
     void Die()

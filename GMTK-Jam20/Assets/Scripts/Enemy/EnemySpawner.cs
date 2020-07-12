@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
 
+    bool canSpawn = true;
+
     GameObject enemy;
     AudioSource audioSource;
 
@@ -43,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy(bool firstSpawn = false)
     {
         if (isPlayerDead) return;
+        if (!canSpawn) return;
 
         enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyHealth>().onEnemyDied += OnEnemyDied;
