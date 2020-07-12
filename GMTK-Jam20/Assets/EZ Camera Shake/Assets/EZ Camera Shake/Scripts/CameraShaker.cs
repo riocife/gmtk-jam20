@@ -41,6 +41,9 @@ namespace EZCameraShake
 
         void Update()
         {
+            bool hasShakeInstances = (cameraShakeInstances.Count > 0);
+            if (!hasShakeInstances) return;
+
             posAddShake = Vector3.zero;
             rotAddShake = Vector3.zero;
 
@@ -63,8 +66,8 @@ namespace EZCameraShake
                 }
             }
 
-            transform.localPosition = posAddShake + RestPositionOffset;
-            transform.localEulerAngles = rotAddShake + RestRotationOffset;
+            transform.localPosition += posAddShake + RestPositionOffset;
+            transform.localEulerAngles += rotAddShake + RestRotationOffset;
         }
 
         /// <summary>

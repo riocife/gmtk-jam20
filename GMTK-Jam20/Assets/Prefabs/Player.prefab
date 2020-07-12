@@ -327,11 +327,8 @@ MonoBehaviour:
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  dashShakeParams:
-    magnitude: 10
-    roughness: 10
-    fadeInTime: 1
-    fadeOutTime: 2
+  dashShakeMag: 6
+  dashShakeTime: 0.75
   dashSound:
     volumeMin: 0.4
     volumeMax: 1
