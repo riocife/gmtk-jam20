@@ -16,7 +16,7 @@ public class Collectable : MonoBehaviour
         {
             num++;
             onCollected.Invoke();
-
+            Debug.Log("collected collectable");
             Destroy(gameObject);
         }
     }

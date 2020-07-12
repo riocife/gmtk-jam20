@@ -9,7 +9,7 @@ public class VictoryPoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.GetComponent<PlayerMovement>())
+        if (collision.transform.GetComponent<PlayerMovement>() && Collectable.num == 2)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
