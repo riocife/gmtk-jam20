@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
         Vector3 relativeMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        if (relativeMousePos.normalized.y > .1)
+        if (relativeMousePos.normalized.y > 0)
         {
             sprite.sortingOrder = 9;
         }
