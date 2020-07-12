@@ -321,14 +321,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbcc2f9547aa6e439f76bcc279a13f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 8
-  dashDistance: 5
+  dashSpeed: 12
+  dashDistance: 3.5
   dashCooldown: 0
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  dashShakeMag: 6
-  dashShakeTime: 0.75
+  dashShakeMag: 0
+  dashShakeTime: 0
   dashSound:
     volumeMin: 0.4
     volumeMax: 1
