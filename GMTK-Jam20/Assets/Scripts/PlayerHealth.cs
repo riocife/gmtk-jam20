@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
     public void OnHit()
     {
         if (invincible) return;
-
+        
         animator.SetTrigger("Hitted");
 
         // If there are no active skills, game over.
