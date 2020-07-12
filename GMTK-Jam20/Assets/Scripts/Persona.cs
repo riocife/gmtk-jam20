@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Persona : MonoBehaviour
 {
-    // Initial force to add to this persona.
-    public float initialImpulse = 10f;
-
     // Player can only collect this persona back after this time passes.
     public float uncollectableTime = 3f;
 
@@ -21,7 +20,6 @@ public class Persona : MonoBehaviour
     public List<SkillColor> colors = new List<SkillColor>();
 
     [HideInInspector] public Transform targetTransform;
-
     PlayerSkills skill;
     public PlayerSkills Skill
     {
@@ -35,17 +33,29 @@ public class Persona : MonoBehaviour
 
     SpriteRenderer sr;
     Collider2D col;
+    Animator anim;
+
+    AIPath path;
+    AIDestinationSetter destination;
 
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
         col.enabled = false;
+
+        path = GetComponent<AIPath>();
     }
 
     void Start()
     {
         StartCoroutine(ActivateCollider());
+    }
+
+    void Update()
+    {
+        anim.SetBool("ReachedDestination", path.reachedDestination);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

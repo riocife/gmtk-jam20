@@ -5,9 +5,19 @@ using UnityEngine;
 
 public enum PlayerSkills { Dash, Weapon };
 
+[System.Serializable]
+public struct PersonaPrefab
+{
+    string name;
+    PlayerSkills skill;
+    GameObject prefab;
+}
+
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject personaPrefab;
+
+    public PersonaPrefab[] personaPrefabs;
 
     List<PlayerSkills> activeSkills = new List<PlayerSkills>();
 
@@ -86,7 +96,6 @@ public class PlayerHealth : MonoBehaviour
         if (persona != null)
         {
             persona.Skill = skill;
-            //            persona.targetTransform = GetComponent<PlayerMovement>().initialTransform;
             persona.GetComponent<AIDestinationSetter>().target = GetComponent<PlayerMovement>().playerStart;
         }
     }
