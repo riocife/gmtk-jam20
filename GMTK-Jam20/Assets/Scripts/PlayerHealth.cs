@@ -58,9 +58,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (invincible) return;
         
-        mainCamera = Camera.main;
-        mainCamera.GetComponent<CameraMove>().Shake((Vector3)dashDir, dashShakeMag, dashShakeTime);
-        
         animator.SetTrigger("Hitted");
 
         // If there are no active skills, game over.
