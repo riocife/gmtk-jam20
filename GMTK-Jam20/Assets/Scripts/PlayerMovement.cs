@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("isDashing", isDashing);
         if (!isDashing)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             sprite.flipX = (relativeMousePos.normalized.y > .0f);
-            Debug.Log(sprite.flipX);
+
         }
         // Check the mouse position to see if we should flip
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -79,10 +80,10 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1f);
             isLookingRight = !isLookingRight;
         }
+
     }
     void FixedUpdate()
     {
-        animator.SetBool("isDashing", isDashing);
         if (!isDashing)
         {
             if (moveInput.magnitude > 1)
