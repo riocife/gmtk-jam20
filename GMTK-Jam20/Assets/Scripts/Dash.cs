@@ -38,6 +38,7 @@ public class Dash : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        playerMovement.isDashing = false;
     }
 
     void Update()
@@ -79,8 +80,6 @@ public class Dash : MonoBehaviour
 
         // Camera shake
         mainCamera.GetComponent<CameraMove>().Shake((Vector3)dashDir, dashShakeMag, dashShakeTime);
-
-        // Animation
 
     }
 
