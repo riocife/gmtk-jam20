@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 12
   dashDistance: 3.5
-  dashCooldown: 0
+  dashCooldown: 1
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 512

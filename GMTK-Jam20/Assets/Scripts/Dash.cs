@@ -42,7 +42,7 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing)
+        if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing && !cooldown)
         {
             StartDash();
         }
@@ -50,7 +50,10 @@ public class Dash : MonoBehaviour
 
     void FixedUpdate()
     {
-        PerformDash();    
+        if (playerMovement.isDashing)
+        {
+            PerformDash();
+        }
     }
 
     void StartDash()
@@ -83,8 +86,6 @@ public class Dash : MonoBehaviour
 
     void PerformDash()
     {
-        if (!playerMovement.isDashing && !cooldown) return;
-
         Vector2 target = Vector2.MoveTowards(rb.position, dashTarget, dashSpeed * Time.fixedDeltaTime);
         rb.MovePosition(target);
 
