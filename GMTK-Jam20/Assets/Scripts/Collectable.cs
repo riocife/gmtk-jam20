@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Collectable : MonoBehaviour
 {
     public static int num = 0;
-    public static Action onCollected;
+    public int diamond_num = 0;
+    public static Action<int> onCollected;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class Collectable : MonoBehaviour
         if (player != null)
         {
             num++;
-            onCollected.Invoke();
+            onCollected.Invoke(diamond_num);
             Debug.Log("collected collectable");
             Destroy(gameObject);
         }

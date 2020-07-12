@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -3073932924347703025}
   - component: {fileID: 8547281570412323397}
   - component: {fileID: 2350769769843168060}
+  - component: {fileID: 3886149520370850360}
   m_Layer: 0
   m_Name: Goal1
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375e92437503bc40ab5c9f0f0084e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamond_num: 0
 --- !u!212 &2350769769843168060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112,3 +114,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3886149520370850360
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939008521795848485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ccf57cdbe6830b4c8bf28dd43e86e9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

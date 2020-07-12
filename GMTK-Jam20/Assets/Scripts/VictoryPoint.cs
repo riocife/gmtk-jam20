@@ -14,7 +14,6 @@ public class VictoryPoint : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.black;

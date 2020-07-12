@@ -2,30 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CollectableHUD : MonoBehaviour
 {
     public Text collectedText;
 
-    GameObject Diamond1;
+    public GameObject Diamond1;
+    public GameObject Diamond2;
 
     void Start()
     {
-        Diamond1 = GameObject.Find("Diamond1");
-        Image d1 = Diamond1.GetComponent<Image>();
         Collectable.onCollected += OnCollected;
     }
 
-    void UpdateDiamondUI()
+    void UpdateDiamond1UI()
     {
         Diamond1.GetComponent<Image>().color = Color.white;
         Diamond1.GetComponent<Animator>().enabled = true;
     }
-
-    void OnCollected()
+    void UpdateDiamond2UI()
     {
-        collectedText.text = "x" + Collectable.num;
-        UpdateDiamondUI();
-        
+        Diamond2.GetComponent<Image>().color = Color.white;
+        Diamond2.GetComponent<Animator>().enabled = true;
+    }
+
+    void OnCollected(int num)
+    {
+        if (num == 1)
+        {
+            UpdateDiamond1UI();
+        }
+        else if (num == 2)
+        {
+            UpdateDiamond2UI();
+        }
+
+        if (Collectable.num == 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
