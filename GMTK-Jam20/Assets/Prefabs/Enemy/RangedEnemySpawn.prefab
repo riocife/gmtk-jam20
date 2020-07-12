@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8067999144689325207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7353592787987706011, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 8784036770715936573, guid: 4af0c98db16f389408091a13e3d9019c,
+        type: 3}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145598414762181888, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302033031994209094, guid: 2c47aea23d7c4694fa5f4712a21d1321,
+        type: 3}
+      propertyPath: m_Name
+      value: RangedEnemySpawn
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c47aea23d7c4694fa5f4712a21d1321, type: 3}
