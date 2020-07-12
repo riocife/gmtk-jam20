@@ -30,13 +30,23 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        hits -= damage;
-        if (hits <= 0)
+        Bullet bullet = collision.GetComponent<Bullet>();
+        if (bullet)
         {
+            Destroy(bullet.gameObject);
             Die();
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        //hits -= damage;
+        //if (hits <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     void Die()
