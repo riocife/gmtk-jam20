@@ -6,6 +6,13 @@ using UnityEngine.AI;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public float delayBeforeChase = 1f;
+
+    void Start()
+    {
+
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth health = collision.transform.GetComponent<PlayerHealth>();

@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    bool canSpawn = false;
+    bool canSpawn = true;
 
     GameObject enemy;
     AudioSource audioSource;
