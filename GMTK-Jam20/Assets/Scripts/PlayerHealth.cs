@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     {
         dash = GetComponent<Dash>();
         weapon = transform.GetChild(0);
-        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         foreach (PersonaPrefab persona in personaPrefabs)
         {
@@ -52,7 +52,6 @@ public class PlayerHealth : MonoBehaviour
         {
             OnHit();
         }
-        Debug.Log(activeSkills.Count);
     }
 
     public void OnHit()
@@ -144,7 +143,7 @@ public class PlayerHealth : MonoBehaviour
 
         onPlayerDied.Invoke();
 
-        GetComponent<Animator>().SetTrigger("Died");
+        animator.SetTrigger("Died");
 
         Destroy(gameObject, 5f);
     }
