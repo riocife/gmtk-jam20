@@ -9,6 +9,11 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenuScreen;
     public GameObject creditsScreen;
 
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

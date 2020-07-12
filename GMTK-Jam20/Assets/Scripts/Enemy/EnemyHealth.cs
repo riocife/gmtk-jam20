@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public Action onEnemyDied;
 
     AudioSource audioSource;
+    Animator animator;
 
     // Hits needed to die
     public int hits = 1;
@@ -20,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     void Awake()
     {
         PlayerHealth.onPlayerDied += OnPlayerDied;
+        animator = GameObject.Find("Sprite").GetComponent<Animator>();
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
@@ -40,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         onEnemyDied?.Invoke();
+        animator.SetTrigger("OnDeath");
 
         // Stop current clip and change it to explosion
         audioSource.Stop();
@@ -87,7 +90,7 @@ public class EnemyHealth : MonoBehaviour
 
         PlayerHealth.onPlayerDied -= OnPlayerDied;
 
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 1.0f);
     }
 
     void OnPlayerDied()

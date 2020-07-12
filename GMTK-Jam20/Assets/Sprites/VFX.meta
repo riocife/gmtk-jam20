@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GMTK-Jam20/Assets/Animations/Diamonds/InGame.meta
+guid: a6e4124ee989dcd4fb169e43184ee3a3
+=======
 guid: 023498d31d7f1904c8e99d90617cdd68
+>>>>>>> 7edcb781dac5d0f4cc9fe4f0d33bccf2c9daf3ed:GMTK-Jam20/Assets/Sprites/VFX.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
