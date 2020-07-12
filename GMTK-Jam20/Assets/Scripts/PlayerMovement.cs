@@ -48,14 +48,11 @@ public class PlayerMovement : MonoBehaviour
            
             animator.SetFloat("Speed", moveInput.x + moveInput.y);
 
-            Vector3 relativeMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-            Debug.Log(relativeMousePos.normalized.y);
-            
+            Vector3 relativeMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                        
             animator.SetFloat("Vertical", relativeMousePos.normalized.y);
-            
-            
 
+            Debug.Log(relativeMousePos.normalized.y);
             // Check if its moving
             if (moveInput.x != 0.0f || moveInput.y != 0.0f)
             {
