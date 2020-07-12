@@ -11,7 +11,7 @@ public class Barrier : MonoBehaviour
         Collectable.onCollected += OnCollected;
     }
 
-    void OnCollected()
+    void OnCollected(int num)
     {
         if (Collectable.num >= collectablesNeeded)
         {

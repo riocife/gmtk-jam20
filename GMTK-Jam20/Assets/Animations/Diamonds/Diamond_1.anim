@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Diamond_1
   serializedVersion: 6
-  m_Legacy: 1
+  m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -60,16 +60,36 @@ AnimationClip:
         type: 3}
     attribute: m_Sprite
     path: 
-    classID: 114
-    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 7
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 1921765131320266894, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 6844252344327648843, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 2707000022809127504, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 7464406270172626468, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 4659317996233911992, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 2468160332299291236, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: -4673964021565202201, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 2468160332299291236, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 4659317996233911992, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 7464406270172626468, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 2707000022809127504, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 6844252344327648843, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
+    - {fileID: 1921765131320266894, guid: a286eafecc2ec3141ab52101c49e7797, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
