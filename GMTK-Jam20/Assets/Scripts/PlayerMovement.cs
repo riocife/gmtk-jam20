@@ -50,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxis("Vertical");
-
-            Debug.Log(relativeMousePos.normalized.y);
            
             animator.SetFloat("Speed", moveInput.x + moveInput.y);
 
