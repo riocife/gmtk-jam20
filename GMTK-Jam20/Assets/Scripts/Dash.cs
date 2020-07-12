@@ -38,11 +38,12 @@ public class Dash : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        playerMovement.isDashing = false;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing)
+        if (Input.GetMouseButtonDown(1) && !playerMovement.isDashing && !cooldown)
         {
             StartDash();
         }
@@ -50,7 +51,10 @@ public class Dash : MonoBehaviour
 
     void FixedUpdate()
     {
-        PerformDash();    
+        if (playerMovement.isDashing)
+        {
+            PerformDash();
+        }
     }
 
     void StartDash()
@@ -77,14 +81,10 @@ public class Dash : MonoBehaviour
         // Camera shake
         mainCamera.GetComponent<CameraMove>().Shake((Vector3)dashDir, dashShakeMag, dashShakeTime);
 
-        // Animation
-
     }
 
     void PerformDash()
     {
-        if (!playerMovement.isDashing && !cooldown) return;
-
         Vector2 target = Vector2.MoveTowards(rb.position, dashTarget, dashSpeed * Time.fixedDeltaTime);
         rb.MovePosition(target);
 

@@ -14,11 +14,17 @@ public struct PersonaPrefab
     public GameObject prefab;
 }
 
+
 public class PlayerHealth : MonoBehaviour
 {
+    public static Action<PlayerSkills> onPlayerLoseSkill;
+    public static Action<PlayerSkills> onPlayerGainSkill;
     public static Action onPlayerDied;
 
+    Animator animator;
     public List<PersonaPrefab> personaPrefabs = new List<PersonaPrefab>();
+
+    public AnimatorOverrideController animationsOverride;
 
     List<PlayerSkills> activeSkills = new List<PlayerSkills>();
 
@@ -32,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     {
         dash = GetComponent<Dash>();
         weapon = transform.GetChild(0);
+        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
 
         foreach (PersonaPrefab persona in personaPrefabs)
         {
@@ -45,11 +52,14 @@ public class PlayerHealth : MonoBehaviour
         {
             OnHit();
         }
+        Debug.Log(activeSkills.Count);
     }
 
     public void OnHit()
     {
         if (invincible) return;
+
+        animator.SetTrigger("Hitted");
 
         // If there are no active skills, game over.
         if (activeSkills.Count <= 0)
@@ -84,6 +94,8 @@ public class PlayerHealth : MonoBehaviour
         }
 
         InstantiatePersona(skill);
+
+        onPlayerLoseSkill.Invoke(skill);
     }
 
     IEnumerator InvincibilityTimer()
@@ -120,6 +132,8 @@ public class PlayerHealth : MonoBehaviour
             default:
                 break;
         }
+
+        onPlayerGainSkill.Invoke(skill);
     }
 
     void Die()

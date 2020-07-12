@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 48a719ab70f85f341abacd5322ff03ad
+guid: 79b36712a69ecf14cb15315bdfd84f17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5911565955195055573
-    second: ANIM_courage_idle_0
+      213: 8918175258741749638
+    second: ANIM_enemy_walk-idlebackt_0
   - first:
-      213: -618562804374646213
-    second: ANIM_courage_idle_1
+      213: -6604139398208225424
+    second: ANIM_enemy_walk-idlebackt_1
   - first:
-      213: 1929800086502880310
-    second: ANIM_courage_idle_2
+      213: -3887985172142414792
+    second: ANIM_enemy_walk-idlebackt_2
   - first:
-      213: 117916068925259403
-    second: ANIM_courage_idle_3
+      213: -1773289326695856296
+    second: ANIM_enemy_walk-idlebackt_3
   - first:
-      213: 1421393140573401729
-    second: ANIM_courage_idle_4
+      213: -2096296407611786515
+    second: ANIM_enemy_walk-idlebackt_4
   - first:
-      213: -1853387335598708518
-    second: ANIM_courage_idle_5
+      213: 1653378498076558389
+    second: ANIM_enemy_walk-idlebackt_5
+  - first:
+      213: 5425097255750082210
+    second: ANIM_enemy_walk-idlebackt_6
+  - first:
+      213: 3070555124329393616
+    second: ANIM_enemy_walk-idlebackt_7
+  - first:
+      213: 5848848559180419304
+    second: ANIM_enemy_walk-idlebackt_8
+  - first:
+      213: -8030113604148190313
+    second: ANIM_enemy_walk-idlebackt_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -63,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,18 +114,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ANIM_courage_idle_0
+      name: ANIM_enemy_walk-idlebackt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dda1b95ae91a0250800000000000000
-      internalID: 5911565955195055573
+      spriteID: 687baf5b529b3cb70800000000000000
+      internalID: 8918175258741749638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ANIM_courage_idle_1
+      name: ANIM_enemy_walk-idlebackt_1
       rect:
         serializedVersion: 2
         x: 64
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b32dafd186c6a67f0800000000000000
-      internalID: -618562804374646213
+      spriteID: 07ff2a225326954a0800000000000000
+      internalID: -6604139398208225424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ANIM_courage_idle_2
+      name: ANIM_enemy_walk-idlebackt_2
       rect:
         serializedVersion: 2
         x: 128
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 634b58344f608ca10800000000000000
-      internalID: 1929800086502880310
+      spriteID: 834277ad51a1b0ac0800000000000000
+      internalID: -3887985172142414792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ANIM_courage_idle_3
+      name: ANIM_enemy_walk-idlebackt_3
       rect:
         serializedVersion: 2
         x: 192
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8eb9993a0ce2a100800000000000000
-      internalID: 117916068925259403
+      spriteID: 8574d4ea0c20467e0800000000000000
+      internalID: -1773289326695856296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ANIM_courage_idle_4
+      name: ANIM_enemy_walk-idlebackt_4
       rect:
         serializedVersion: 2
         x: 256
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 182fd0ec78dc9b310800000000000000
-      internalID: 1421393140573401729
+      spriteID: dea3f50268578e2e0800000000000000
+      internalID: -2096296407611786515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ANIM_courage_idle_5
+      name: ANIM_enemy_walk-idlebackt_5
       rect:
         serializedVersion: 2
         x: 320
@@ -248,8 +248,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad86e66b9027746e0800000000000000
-      internalID: -1853387335598708518
+      spriteID: 5344f19ebfaf1f610800000000000000
+      internalID: 1653378498076558389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANIM_enemy_walk-idlebackt_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae1ee0f531d94b40800000000000000
+      internalID: 5425097255750082210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANIM_enemy_walk-idlebackt_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dda8e8fd9dcc9a20800000000000000
+      internalID: 3070555124329393616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANIM_enemy_walk-idlebackt_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0110ba6c84b2150800000000000000
+      internalID: 5848848559180419304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANIM_enemy_walk-idlebackt_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79327bee83e4f8090800000000000000
+      internalID: -8030113604148190313
       vertices: []
       indices: 
       edges: []
