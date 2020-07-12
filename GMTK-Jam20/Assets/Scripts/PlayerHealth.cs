@@ -130,6 +130,8 @@ public class PlayerHealth : MonoBehaviour
 
         onPlayerDied.Invoke();
 
+        GetComponent<Animator>().SetTrigger("Died");
+
         Destroy(gameObject, 5f);
     }
 }

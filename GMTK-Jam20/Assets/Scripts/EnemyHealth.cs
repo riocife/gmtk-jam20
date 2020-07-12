@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
 
     void Awake()
     {
+        PlayerHealth.onPlayerDied += OnPlayerDied;
+
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -69,6 +71,15 @@ public class EnemyHealth : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
 
+        PlayerHealth.onPlayerDied -= OnPlayerDied;
+
         Destroy(gameObject, 0.5f);
+    }
+
+    void OnPlayerDied()
+    {
+        GetComponent<EnemyAttack>().enabled = false;
+        GetComponent<Seeker>().enabled = false;
+        GetComponent<AIPath>().enabled = false;
     }
 }

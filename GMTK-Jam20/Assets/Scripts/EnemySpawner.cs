@@ -17,9 +17,12 @@ public class EnemySpawner : MonoBehaviour
 
     AudioListener audioListener;
 
+    bool isPlayerDead = false;
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        PlayerHealth.onPlayerDied += OnPlayerDied;
     }
 
     void Start()
@@ -39,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy(bool firstSpawn = false)
     {
+        if (isPlayerDead) return;
+
         enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyHealth>().onEnemyDied += OnEnemyDied;
 
@@ -67,5 +72,10 @@ public class EnemySpawner : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 2f);
+    }
+
+    void OnPlayerDied()
+    {
+        isPlayerDead = true;
     }
 }

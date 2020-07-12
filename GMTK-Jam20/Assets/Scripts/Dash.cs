@@ -21,6 +21,7 @@ public class Dash : MonoBehaviour
     Rigidbody2D rb;
     AudioSource audioSource;
     Camera mainCamera;
+    Animator animator;
 
     Vector2 dashDir;
     Vector2 dashTarget;
@@ -75,6 +76,9 @@ public class Dash : MonoBehaviour
 
         // Camera shake
         mainCamera.GetComponent<CameraMove>().Shake((Vector3)dashDir, dashShakeMag, dashShakeTime);
+
+        // Animation
+
     }
 
     void PerformDash()
