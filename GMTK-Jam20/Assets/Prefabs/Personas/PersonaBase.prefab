@@ -102,8 +102,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24513045, y: 0.36385974}
+  m_Offset: {x: 0.07897851, y: -0.18757415}
+  m_Size: {x: 0.75849026, y: 0.83253217}
   m_Direction: 0
 --- !u!114 &962769537980549971
 MonoBehaviour:
@@ -165,7 +165,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 4
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

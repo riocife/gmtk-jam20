@@ -209,11 +209,11 @@ GameObject:
   - component: {fileID: 8164267288076784739}
   - component: {fileID: 8164267288076784738}
   - component: {fileID: 8164267288076784750}
-  - component: {fileID: 8164267288076784751}
   - component: {fileID: 1506086069}
   - component: {fileID: 1506086070}
   - component: {fileID: 2699403161356602173}
   - component: {fileID: 1762798667}
+  - component: {fileID: 8164267288076784751}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -292,23 +292,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1593776526924966963, guid: b40d0cf83f2f81546b2bc5ea8e3ab5fb,
     type: 3}
   weapon: {fileID: 7351919236313817897}
-  bulletForce: 20
---- !u!70 &8164267288076784751
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8164267288076784740}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.4, y: 0.4}
-  m_Direction: 0
+  bulletForce: 18
+  shotCooldown: 0.75
 --- !u!114 &1506086069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 12
   dashDistance: 3.5
-  dashCooldown: 1
+  dashCooldown: 0.7
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -550,6 +535,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &8164267288076784751
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164267288076784740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05}
+  m_Size: {x: 0.4, y: 0.4}
+  m_Direction: 0
 --- !u!1 &8164267289261939588
 GameObject:
   m_ObjectHideFlags: 0
