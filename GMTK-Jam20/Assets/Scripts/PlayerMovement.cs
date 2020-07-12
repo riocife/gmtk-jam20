@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,7 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     bool isMoving = false;
     float originalSpeed;
-    bool invertFlip = false;
+
+    Vector3 relativeMousePos = new Vector3();
+
+    SpriteRenderer sprite;
 
     public bool isDashing = false;
 
@@ -29,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+        sprite = GameObject.Find("PlayerSprite").GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -48,12 +53,10 @@ public class PlayerMovement : MonoBehaviour
            
             animator.SetFloat("Speed", moveInput.x + moveInput.y);
 
-            Vector3 relativeMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            animator.SetFloat("Vertical", relativeMousePos.y);
+            relativeMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                        
+            animator.SetFloat("Vertical", relativeMousePos.normalized.y);
             
-
-
             // Check if its moving
             if (moveInput.x != 0.0f || moveInput.y != 0.0f)
             {
@@ -63,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("isMoving", false);
             }
-        
+
+            sprite.flipX = (relativeMousePos.normalized.y > .0f);
+            Debug.Log(sprite.flipX);
         }
         // Check the mouse position to see if we should flip
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
