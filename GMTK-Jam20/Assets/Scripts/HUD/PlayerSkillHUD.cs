@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class PlayerSkillHUD : MonoBehaviour
 {
     public PlayerSkills skill;
-    public Color inactiveColor;
-
-    Color originalColor;
+    public Sprite inactiveSprite;
+    Sprite activeSprite;
 
     Image image;
 
     void Start()
     {
         image = GetComponent<Image>();
-        originalColor = image.color;
+        activeSprite = image.sprite;
 
         PlayerHealth.onPlayerLoseSkill += OnPlayerLoseSkill;
         PlayerHealth.onPlayerGainSkill += OnPlayerGainSkill;
@@ -25,13 +24,13 @@ public class PlayerSkillHUD : MonoBehaviour
     void OnPlayerLoseSkill(PlayerSkills skillLost)
     {
         if (skill != skillLost) return;
-        image.color = inactiveColor;
+        image.sprite = inactiveSprite;
     }
 
     void OnPlayerGainSkill(PlayerSkills skillGained)
     {
         if (skill != skillGained) return;
-        image.color = originalColor;
+        image.sprite = activeSprite;
     }
 
     void OnPlayerDied()
