@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerSkills { Dash, Weapon };
 
@@ -38,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
     {
         dash = GetComponent<Dash>();
         weapon = transform.GetChild(0);
-        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         foreach (PersonaPrefab persona in personaPrefabs)
         {
@@ -143,8 +144,14 @@ public class PlayerHealth : MonoBehaviour
 
         onPlayerDied.Invoke();
 
-        GetComponent<Animator>().SetTrigger("Died");
+        animator.SetTrigger("Died");
 
-        Destroy(gameObject, 5f);
+        StartCoroutine(AfterDeath());
+    }
+
+    IEnumerator AfterDeath()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

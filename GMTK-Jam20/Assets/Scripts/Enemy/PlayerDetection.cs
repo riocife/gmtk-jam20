@@ -1,4 +1,5 @@
 ﻿using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class PlayerDetection : MonoBehaviour
     bool foundPlayer = false;
 
     AudioSource audioSource;
+
+    public Action onEnemyEnter;
+    public Action onEnemyLeave;
 
     private void Awake()
     {
@@ -22,9 +26,23 @@ public class PlayerDetection : MonoBehaviour
         if (player != null && !foundPlayer)
         {
             foundPlayer = true;
-            ai.target = player.transform;
+            if (ai)
+            {
+                ai.target = player.transform;
+            }
+
+            onEnemyEnter.Invoke();
 
             audioSource.Play();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        PlayerMovement player = collision.GetComponent<PlayerMovement>();
+        if (player != null)
+        {
+            onEnemyLeave.Invoke();
         }
     }
 }

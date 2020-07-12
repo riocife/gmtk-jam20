@@ -62,9 +62,23 @@ public class EnemyHealth : MonoBehaviour
             coll.enabled = false;
         }
 
-        GetComponent<EnemyAttack>().enabled = false;
-        GetComponent<Seeker>().enabled = false;
-        GetComponent<AIPath>().enabled = false;
+        EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
+        if (enemyAttack)
+        {
+            enemyAttack.enabled = false;
+        }
+
+        Seeker seeker = GetComponent<Seeker>();
+        if (seeker)
+        {
+            seeker.enabled = false;
+        }
+
+        AIPath path = GetComponent<AIPath>();
+        if (path)
+        {
+            path.enabled = false;
+        }
 
         for (int i = 0; i < transform.childCount; ++i)
         {
