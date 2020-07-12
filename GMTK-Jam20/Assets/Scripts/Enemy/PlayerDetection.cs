@@ -31,7 +31,7 @@ public class PlayerDetection : MonoBehaviour
                 ai.target = player.transform;
             }
 
-            onEnemyEnter.Invoke();
+            onEnemyEnter?.Invoke();
 
             audioSource.Play();
         }
@@ -42,7 +42,7 @@ public class PlayerDetection : MonoBehaviour
         PlayerMovement player = collision.GetComponent<PlayerMovement>();
         if (player != null)
         {
-            onEnemyLeave.Invoke();
+            onEnemyLeave?.Invoke();
         }
     }
 }
