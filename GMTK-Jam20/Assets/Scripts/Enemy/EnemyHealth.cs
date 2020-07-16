@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         onEnemyDied?.Invoke();
-        animator.SetTrigger("OnDeath");
+        //animator.SetTrigger("OnDeath");
 
         // Stop current clip and change it to explosion
         audioSource.Stop();
